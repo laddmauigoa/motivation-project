@@ -1,0 +1,29 @@
+{
+  "name": "motivation-project",
+  "version": "1.0.0",
+  "description": "text motivational quotes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/laddmauigoa/motivation-project.git"
+  },
+  "author": "Ladd Mauigoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/laddmauigoa/motivation-project/issues"
+  },
+  "homepage": "https://github.com/laddmauigoa/motivation-project",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "express": "^4.11.2",
+    "express-session": "^1.10.3",
+    "mongoose": "^3.8.23",
+    "passport": "^0.2.1",
+    "passport-local": "^1.0.0",
+    "q": "^1.1.2"
+  }
+}
