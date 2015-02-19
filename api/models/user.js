@@ -11,9 +11,6 @@ var schema = mongoose.Schema ({
 
 schema.pre('save', function(next) {
 	var user = this;
-	var progress = function() {
-		console.log('progress')
-	}
 	if(!user.isModified('password')) {
 		return next();
 	}
