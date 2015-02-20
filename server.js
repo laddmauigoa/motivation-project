@@ -6,7 +6,7 @@ var session = require('express-session');
 var localStrategy = require('passport-local').Strategy;
 
 var User = require('./api/models/User')
-var UserController = require('./api/controllers/userCtrl')
+var ProfileController = require('./api/controllers/profileCtrl')
 var port = 8888;
 
 
@@ -55,8 +55,9 @@ passport.deserializeUser(function(obj, done) {
 
 app.post('/api/auth', passport.authenticate('local'), function(req, res) {
 	// if auth was successful, this will happen
-	return res.status(200).end();
+	return res.status(200).redirect("/#/loggedIn");
 });
+
 app.post('/api/register', function(req, res) {
 	//create user
 	var newUser = new User(req.body);
@@ -64,22 +65,28 @@ app.post('/api/register', function(req, res) {
 		if(err) {
 			return res.status(500).end();
 		}
-		return res.json(user);
-	});
+		passport.authenticate('local')(req, res, function() {
+			res.redirect('/#/loggedIn')
+		})
+	})
 });
 
 
 var isAuthed = function(req, res, next) {
 	if(!req.isAuthenticated()) {
-		return res.status(403).end();
+		return res.status(401).end();
 	}
 	return next();
 }
 
+app.get('/api/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 
-app.get("/api/user", UserController.get);
-app.post("/api/user", UserController.create);
+app.get("/api/profile", isAuthed, ProfileController.profile);
+//app.post("/api/user", UserController.create);
 
 mongoose.connect('mongodb://localhost/motivation')
 
