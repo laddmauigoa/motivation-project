@@ -23,4 +23,18 @@ app.service('registerService', function($http, $q) {
 		})
 		return dfd.promise;
 	}
+
+	this.getProfile = function() {
+		var deferred = $q.defer();
+		console.log('almost resolved')
+		$http({
+			method: 'GET',
+			url: '/api/profile'
+		}).then(function(response) {
+			console.log('profile promise resolved')
+			deferred.resolve(response.data);
+		});
+		return deferred.promise;
+	};
+	
 })
