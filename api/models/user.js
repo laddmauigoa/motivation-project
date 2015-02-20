@@ -11,6 +11,7 @@ var schema = mongoose.Schema ({
 
 schema.pre('save', function(next) {
 	var user = this;
+
 	if(!user.isModified('password')) {
 		return next();
 	}
@@ -18,7 +19,7 @@ schema.pre('save', function(next) {
 		if(err) {
 			return next(err);
 		}
-		bcrypt.hash(user.password, salt, progress, function(err, hash) {
+		bcrypt.hash(user.password, salt, null, function(err, hash) {
 			user.password = hash;
 			return next();
 		});

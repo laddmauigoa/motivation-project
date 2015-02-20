@@ -13,7 +13,13 @@ app.config(function($routeProvider) {
 	})
 	.when('/loggedIn', {
 		templateUrl: '/templates/loggedInTmpl.html',
-		controller: 'loggedInCtrl'
+		controller: 'loggedInCtrl',
+		resolve: {
+			app: function(registerService) {
+				return registerService.getProfile()
+
+			}
+		}
 	})
 
 	.otherwise({
