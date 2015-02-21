@@ -12,11 +12,14 @@ module.exports = {
 		})
 	},
 
-	get: function(req, res) {
+	get: function() {
 		User.find({}).exec().then(function(users) {
-			return res.json(users);
+			users.forEach(function(item) {
+				console.log(item.phone)
+			})
+			
 		});
-		// this is stored in passport = console.log(req.user)
+		
 	}
 
 }
