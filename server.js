@@ -6,10 +6,11 @@ var session = require('express-session');
 var localStrategy = require('passport-local').Strategy;
 var cronJob = require('cron').CronJob;
 
-var twilio = require('twilio')('AC6fed270eef9d913b951650f5c980dd91', '560b028404f0bc8fd1e9d0604c71b17b');
+
 var User = require('./api/models/User');
 var ProfileController = require('./api/controllers/profileCtrl');
 var UserController = require('./api/controllers/userCtrl');
+var TwilioController = require('./api/controllers/twilioCtrl')
 var port = 8888;
 
 
@@ -17,22 +18,9 @@ var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'))
 
-//twilio text every minute lol
-var textQuote = new cronJob('57 10 * * *', function() {
-	UserController.get()
-
-	twilio.sendMessage({
-
-    to:'+18017352199', 
-    from: '+13852194588', 
-    body: 'the quotes go here' 
-
-}, function(err, responseData) { 
-    if (!err) { 
-        console.log(responseData.from); 
-        console.log(responseData.body); 
-    }
-})
+//twilio text 
+var textQuote = new cronJob('12 20 * * *', function() {
+	TwilioController.get()
 
 }, null, true);
 
@@ -108,7 +96,7 @@ app.get('/api/logout', function(req, res){
 
 
 app.get("/api/profile", isAuthed, ProfileController.profile);
-//app.get("/api/user", UserController.get);
+app.get("/api/user", UserController.get);
 
 
 

@@ -1,6 +1,7 @@
 var User = require('./../models/User');
 var mongoose = require('mongoose');
 
+
 module.exports = {
 	create: function(req, res) {
 		var newUser = new User(req.body);
@@ -12,12 +13,10 @@ module.exports = {
 		})
 	},
 
-	get: function() {
+	get: function(req, res) {
 		User.find({}).exec().then(function(users) {
-			users.forEach(function(item) {
-				console.log(item.phone)
-			})
-			
+			console.log(users)
+			res.status(200).json(users)
 		});
 		
 	}
