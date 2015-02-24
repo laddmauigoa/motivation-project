@@ -11,4 +11,14 @@ app.controller('loggedInCtrl', function($scope, $location, loggedInService, app)
  	})
  }
 
+ $scope.unsubscribe = function() {
+ 	console.log();
+ 	loggedInService.unsubscribeMe().then(function () {
+ 		$location.path('/')
+ 	})
+ 	.catch(function(err) {
+ 		console.log('error in the logged in ctrl', err)
+ 	})
+ }
+
 });

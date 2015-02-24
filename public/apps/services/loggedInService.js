@@ -14,4 +14,17 @@ app.service('loggedInService', function($http, $q) {
 		});
 		return deferred.promise;
 	}
+
+	this.unsubscribeMe = function() {
+		var deferred = $q.defer();
+		console.log('unsubscribeMe almost resovlved')
+		$http({
+			method: 'DELETE',
+			url: '/api/profile'
+		}).then(function(response) {
+			console.log('unsubscribeMe promise resolved')
+			deferred.resolve(response);
+		});
+		return deferred.promise;
+	}
 })

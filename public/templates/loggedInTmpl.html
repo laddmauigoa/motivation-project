@@ -1,7 +1,8 @@
-<h1> You are logged in!!!!! yayaayayayayayyay!!!</h1>
+<h1> Welcome {{profile.first_name}}</h1>
 
 {{profile.email}}
 {{profile.phone}}
+{{profile._id}}
 
 
 <div>
@@ -9,5 +10,5 @@
 </div>
 
 <div>
-	<button type='button' class='btn btn-danger'ng-click='logout()'>Unsubscribe</button>
+	<button type='button' class='btn btn-danger'ng-click='unsubscribe()'>Unsubscribe</button>
 </div>

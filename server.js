@@ -97,6 +97,7 @@ app.get('/api/logout', function(req, res){
 
 
 app.get("/api/profile", isAuthed, ProfileController.profile);
+app.delete("/api/profile", isAuthed, ProfileController.delete);
 app.get("/api/user", UserController.get);
 
 
