@@ -11,6 +11,7 @@ var User = require('./api/models/User');
 var ProfileController = require('./api/controllers/profileCtrl');
 var UserController = require('./api/controllers/userCtrl');
 var TwilioController = require('./api/controllers/twilioCtrl')
+var QuoteController = require('./api/controllers/quoteCtrl')
 var port = 8888;
 
 
@@ -19,7 +20,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'))
 
 //twilio text 
-var textQuote = new cronJob('12 20 * * *', function() {
+var textQuote = new cronJob('18 18 * * *', function() {
 	TwilioController.get()
 
 }, null, true);
@@ -97,6 +98,10 @@ app.get('/api/logout', function(req, res){
 
 app.get("/api/profile", isAuthed, ProfileController.profile);
 app.get("/api/user", UserController.get);
+
+
+app.post('/api/quotes', QuoteController.create);
+app.get('/api/quotes', QuoteController.get)
 
 
 

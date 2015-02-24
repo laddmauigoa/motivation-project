@@ -1,24 +1,35 @@
-<h2>Registration</h2>
 
+<div class='container'>
+<h2 class='reg-head'>Registration</h2>
 
-<div>
-	<div>
-		<div>Email:</div>
+	<form class='reg-form'>
+	<div class='form-group'>
+		<div class="col-md-2 col-centered control-label">Email:</div>
 		<div><input type='text' ng-model='email'/></div>
 	</div>
 		
-	<div>
-		<div>Password:</div>
-		<div><input type='text' ng-model='password'/></div>
+	<div class='form-group'>
+		<div class="col-md-2 control-label">Password:</div>
+		<div><input type='password' ng-model='password'/></div>
 	</div>
 
-	<div>
-		<div>Phone Number:</div>
+	<div class='form-group'>
+		<div class="col-md-2 control-label">First Name:</div>
+		<div><input type='text' ng-model='firstName'/></div>
+	</div>
+
+	<div class='form-group'>
+		<div class="col-md-2 control-label">Last Name:</div>
+		<div><input type='text' ng-model='lastName'/></div>
+	</div>
+
+	<div class='form-group'>
+		<div class="col-md-2 control-label">Phone Number:</div>
 		<div><input type='text' ng-model='phone'/></div>
 	</div>
 
-		<div>
-		<div><button ng-click='registerMe()'>Register</button></div>
-		</div>
-
+	<div class='form-group'>
+		<div><button type='button' class='btn btn-primary'ng-click='registerMe()'>Register</button></div>
+	</div>
+	</form>
 </div>

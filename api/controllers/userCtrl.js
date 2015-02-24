@@ -23,7 +23,7 @@ module.exports = {
 
 }
 
-
+// this is to return if i have docs or not. instead of brining all docs ups
 // module.exports = function(req, res) {
 // 	User.find({}, function(err, docs) {
 // 		if(!err) {

@@ -2,7 +2,7 @@ var app = angular.module('motivation');
 
 app.service('registerService', function($http, $q) {
 
-	this.registerNewUser = function(emailer, pass, fone) {
+	this.registerNewUser = function(emailer, pass, firstName, lastName, fone) {
 		var dfd = $q.defer();
 		$http({
 			method: 'Post',
@@ -10,6 +10,8 @@ app.service('registerService', function($http, $q) {
 			data: {
 				email: emailer,
 				password: pass,
+				first_name: firstName,
+				last_name: lastName,
 				phone: fone
 			}
 		})
