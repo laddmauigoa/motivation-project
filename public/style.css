@@ -1,12 +1,14 @@
 body {
-	background-color: #1AC5DB
+	background-image: url('http://wallpoper.com/images/00/37/01/84/forest-photography_00370184.jpg')
+	/*background-color: #1AC5DB*/
+
 }
 .reg-form {
 	margin: 0 auto;
 	
 }
 
-.container {
+.reg-contain {
 	background-color: #25DB8A
 }
 

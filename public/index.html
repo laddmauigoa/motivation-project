@@ -2,16 +2,24 @@
 <html ng-app='motivation'>
 	<head>
 		<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-		<link rel='stylesheet' type='text/css' href='style.css'
+		<link rel="stylesheet" href="animate/animate.min.css">
+		<link rel='stylesheet' type='text/css' href='style.css'>
 	</head>
 
-	<body>
-	<ul>
-		<ul><a href='/#/'>login</a></ul>
-		<ul><a href='/#/register'>Register</a></ul>
-		
-	</ul>
-	
+	<body style='margin-top: 100px'>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+ 	 <ul class="nav navbar-nav">
+        <li class="active"><a href="/#/">Login<span class="sr-only">(current)</span></a></li>
+		<li><a href='/#/register'>Register</a></li>
+		<li><a href='/#/about'>About</a></li>
+		<li><a href='/#/contact'>Contact</a></li>
+       
+      </ul>
+  </div>
+</nav>
+
 
 	<ng-view></ng-view>
 		
@@ -27,5 +35,7 @@
 		<script src='apps/services/registerService.js'></script>
 		<script src='apps/controllers/loggedInCtrl.js'></script>
 		<script src='apps/controllers/registerCtrl.js'></script>
+		<script src='apps/controllers/contactCtrl.js'></script>
+		<script src='apps/services/contactService.js'></script>
 	</body>
 </html>

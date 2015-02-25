@@ -7,6 +7,13 @@ app.config(function($routeProvider) {
 		templateUrl: '/templates/homeTmpl.html',
 		controller: 'homeCtrl'
 	})
+	.when('/about', {
+		templateUrl: '/templates/aboutTmpl.html'
+	})
+	.when('/contact', {
+		templateUrl: '/templates/contactTmpl.html',
+		controller: 'contactCtrl'
+	})
 	.when('/register', {
 		templateUrl:'/templates/registerTmpl.html',
 		controller: 'registerCtrl'

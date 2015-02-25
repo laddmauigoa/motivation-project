@@ -1,30 +1,88 @@
+<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal">
+          <fieldset>
+            <legend class="text-center">Registration </legend>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="email">Email</label>
+              <div class="col-md-8">
+                <input id="email" name="email" type="text" placeholder="Your name" class="form-control" ng-model='email'>
+              </div>
+            </div>
+    
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="password">Password</label>
+              <div class="col-md-8">
+                <input type="password" placeholder="Your password" class="form-control" ng-model='password'>
+              </div>
+            </div>
 
-<div class='container'>
+             <div class="form-group">
+              <label class="col-md-4 control-label" for="first name">First Name</label>
+              <div class="col-md-8">
+                <input  type="text" placeholder="Your first name" class="form-control" ng-model='firstName'>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="last name">Last Name</label>
+              <div class="col-md-8">
+                <input  type="text" placeholder="Your last name" class="form-control" ng-model='lastName'>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="phone number">Phone Number</label>
+              <div class="col-md-8">
+                <input type="text" placeholder="Your phone number" class="form-control" ng-model='phone'>
+              </div>
+            </div>
+    
+
+    
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button class="btn btn-primary btn-lg" ng-click='registerMe()'>Submit</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+	</div>
+</div>
+<!-- <div class='container reg-contain'>
 <h2 class='reg-head'>Registration</h2>
 
 	<form class='reg-form'>
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Email:</div>
+		<label class="col-md-2 control-label">Email:</label>
 		<div><input type='text' ng-model='email'/></div>
 	</div>
 		
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Password:</div>
+		<label class="col-md-2 control-label">Password:</label>
 		<div><input type='password' ng-model='password'/></div>
 	</div>
 
 	<div class='form-group'>
-		<div class="col-md-2 control-label">First Name:</div>
+		<label class="col-md-2 control-label">First Name:</label>
 		<div><input type='text' ng-model='firstName'/></div>
 	</div>
 
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Last Name:</div>
+		<label class="col-md-2 control-label">Last Name:</label>
 		<div><input type='text' ng-model='lastName'/></div>
 	</div>
 
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Phone Number:</div>
+		<label class="col-md-2 control-label">Phone Number:</label>
 		<div><input type='text' ng-model='phone'/></div>
 	</div>
 
@@ -32,4 +90,4 @@
 		<div><button type='button' class='btn btn-primary'ng-click='registerMe()'>Register</button></div>
 	</div>
 	</form>
-</div>
+</div> -->

@@ -1,13 +1,49 @@
-<div class='container'>
+<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
+          <form class="form-horizontal">
+          <fieldset>
+            <legend class="text-center">Login </legend>
+    
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="email">Email</label>
+              <div class="col-md-8">
+                <input id="email" name="email" type="text" placeholder="Your name" class="form-control" ng-model='email'>
+              </div>
+            </div>
+    
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="password">Password</label>
+              <div class="col-md-8">
+                <input type="password" placeholder="Your password" class="form-control" ng-model='password'>
+              </div>
+            </div>
+
+             <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button class="btn btn-primary btn-lg" ng-click='logMeIn()'>Submit</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+	</div>
+</div>
+
+<!-- <div class='container'>
 
 <form>
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Email:</div>
+		<label class="col-md-2 control-label">Email:</label>
 		<div><input type='text' ng-model='email'></div>
 	</div>
 
 	<div class='form-group'>
-		<div class="col-md-2 control-label">Password:</div>
+		<label class="col-md-2 control-label">Password:</label>
 		<div><input type='password' ng-model='password'></div>
 	</div>
 
@@ -16,4 +52,4 @@
 	</div>
 </form>
 
-</div>
+</div> -->

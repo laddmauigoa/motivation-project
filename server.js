@@ -3,6 +3,7 @@ var passport = require('passport');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var mandrill = require('mandrill-api/mandrill');
 var localStrategy = require('passport-local').Strategy;
 var cronJob = require('cron').CronJob;
 
@@ -10,8 +11,9 @@ var cronJob = require('cron').CronJob;
 var User = require('./api/models/User');
 var ProfileController = require('./api/controllers/profileCtrl');
 var UserController = require('./api/controllers/userCtrl');
-var TwilioController = require('./api/controllers/twilioCtrl')
-var QuoteController = require('./api/controllers/quoteCtrl')
+var TwilioController = require('./api/controllers/twilioCtrl');
+var QuoteController = require('./api/controllers/quoteCtrl');
+var MandrillController = require('./api/controllers/mandrillCtrl')
 var port = 8888;
 
 
@@ -102,11 +104,12 @@ app.get("/api/user", UserController.get);
 
 
 app.post('/api/quotes', QuoteController.create);
-app.get('/api/quotes', QuoteController.get)
+app.get('/api/quotes', QuoteController.get);
+
+app.post('/api/contact', MandrillController.post);
 
 
-
-mongoose.connect('mongodb://localhost/motivation')
+mongoose.connect('mongodb://localhost/motivation');
 
 
 app.listen(port, function() {
