@@ -6,6 +6,7 @@ var session = require('express-session');
 var mandrill = require('mandrill-api/mandrill');
 var localStrategy = require('passport-local').Strategy;
 var cronJob = require('cron').CronJob;
+var twilio = require('twilio')('AC6fed270eef9d913b951650f5c980dd91', '560b028404f0bc8fd1e9d0604c71b17b');
 
 
 var User = require('./api/models/User');
@@ -22,7 +23,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'))
 
 //twilio text 
-var textQuote = new cronJob('18 18 * * *', function() {
+var textQuote = new cronJob('16 14 * * *', function() {
 	TwilioController.get()
 
 }, null, true);
@@ -40,8 +41,8 @@ passport.use(new localStrategy({
 	usernameField: 'email',
 	passwordField: 'password'
 }, function(username, password, done) {
-	User.findOne({email: username}).exec().then (function(user) {
-		console.log(user)
+	User.findOne({email: username}).exec().then(function(user) {
+		
 		if(!user) {
 			return done(null, false);
 		} 
@@ -75,6 +76,16 @@ app.post('/api/register', function(req, res) {
 	//create user
 	var newUser = new User(req.body);
 	newUser.save(function(err, user) {
+			 twilio.sendMessage({
+   				 	to: user.phone, 
+    				from: '+13852194588', 
+    				body: 'Thank you ' + user.first_name + ' for signing up! Motivational text messages will be sent once a week'
+				}, function(err, responseData) { 
+    					if (!err) { 
+    					console.log('message sent to ' + responseData.to)
+
+    					}
+				})
 		if(err) {
 			return res.status(500).end();
 		}

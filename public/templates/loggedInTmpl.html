@@ -1,14 +1,37 @@
-<h1> Welcome {{profile.first_name}}</h1>
+<div class="container">
+	<div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="well well-sm">
 
-{{profile.email}}
-{{profile.phone}}
-{{profile._id}}
+          <fieldset>
+            <legend class="text-center">Welcome! </legend>
+            <div>
+            	<p style='font-size: 1.5em'>
+            		Hey {{profile.first_name}} {{profile.last_name}}
+            	</p>
+            	<p>
+            		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            	</p>
+            </div>
+            <div>
+				<button type='button' class='btn btn-default'ng-click='logout()'>Logout</button>
+			</div>
+           </fieldset>
+
+        </div>
+      </div>
+	</div>
+</div> 
 
 
-<div>
-	<button type='button' class='btn btn-danger'ng-click='logout()'>Logout</button>
+
+<div class='col-md-6 col-md-offset-3'>
+	<button type='button' class='btn btn-danger'ng-click='unsubscribe()'>Unsubscribe</button>
 </div>
 
-<div>
-	<button type='button' class='btn btn-danger'ng-click='unsubscribe()'>Unsubscribe</button>
 </div>

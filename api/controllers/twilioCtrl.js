@@ -11,7 +11,6 @@ module.exports = {
 			users.forEach(function(item) {
 			Quote.find({}).exec().then(function(quotes) {
 				var randomQuote = quotes[Math.floor(Math.random() * quotes.length) + 1];
-
 				 twilio.sendMessage({
    				 	to: item.phone, 
     				from: '+13852194588', 

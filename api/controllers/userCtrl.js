@@ -1,11 +1,13 @@
 var User = require('./../models/User');
 var mongoose = require('mongoose');
+var twilio = require('twilio')('AC6fed270eef9d913b951650f5c980dd91', '560b028404f0bc8fd1e9d0604c71b17b');
 
 
 module.exports = {
 	create: function(req, res) {
 		var newUser = new User(req.body);
 		newUser.save(function(err, user) {
+			
 			if(err) {
 				return res.status(500).end();
 			}

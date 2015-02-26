@@ -9,7 +9,7 @@
             <!-- Name input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="name">Name</label>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <input id="name" name="name" type="text" placeholder="Your name" class="form-control" ng-model='contactName'>
               </div>
             </div>
@@ -17,15 +17,15 @@
             <!-- Email input-->
             <div class="form-group">
               <label class="col-md-4 control-label" for="email">Your E-mail</label>
-              <div class="col-md-8">
-                <input id="email" name="email" type="text" placeholder="Your email" class="form-control" ng-model='contactEmail'>
+              <div class="col-md-6">
+                <input id="email" name="email" type="email" placeholder="Your email" class="form-control" ng-model='contactEmail'>
               </div>
             </div>
     
             <!-- Message body -->
             <div class="form-group">
               <label class="col-md-4 control-label" for="message">Your message</label>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5" ng-model='contactMessage' maxlength='3000'></textarea>
               </div>
             </div>
