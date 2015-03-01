@@ -23,7 +23,7 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'))
 
 //twilio text 
-var textQuote = new cronJob('16 14 * * *', function() {
+var textQuote = new cronJob('53 21 * * *', function() {
 	TwilioController.get()
 
 }, null, true);
